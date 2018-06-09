@@ -1,0 +1,55 @@
+{
+  "name": "hypersamexample",
+  "version": "1.0.0",
+  "main": "index",
+  "author": "Slađan Ristić",
+  "license": "ISC",
+  "repository": {
+    "url": "https://github.com/sladiri/hypersam-example"
+  },
+  "engines": {
+    "node": ">=10.3.0"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node --experimental-modules ./src/http-server/http-server.mjs",
+    "prebuild": "npm run clean",
+    "build": "cross-env NODE_ENV=production webpack",
+    "clean": "rimraf ./public"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0-beta.49",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.49",
+    "@babel/preset-env": "^7.0.0-beta.49",
+    "babel-eslint": "^8.2.3",
+    "babel-loader": "^8.0.0-beta.3",
+    "babel-minify-webpack-plugin": "^0.3.1",
+    "compression-webpack-plugin": "^1.1.11",
+    "cross-env": "^5.1.6",
+    "css-loader": "^0.28.11",
+    "eslint": "^4.19.1",
+    "eslint-config-prettier": "^2.9.0",
+    "favicons-webpack-plugin": "0.0.9",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.1.0",
+    "hypersam": "0.0.22",
+    "koa": "^2.5.1",
+    "koa-mount": "^3.0.0",
+    "koa-route": "^3.2.0",
+    "koa-static": "^4.0.3",
+    "koa-webpack": "^4.0.0",
+    "loader-utils": "^1.1.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "mkdirp": "^0.5.1",
+    "postcss-cssnext": "^3.1.0",
+    "postcss-loader": "^2.1.5",
+    "preload-webpack-plugin": "^3.0.0-beta.1",
+    "prettier": "^1.13.5",
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.21.0",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.1",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.3",
+    "webpack-visualizer-plugin": "^0.1.11"
+  }
+}
