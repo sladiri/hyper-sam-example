@@ -5,7 +5,7 @@
   "author": "Slađan Ristić",
   "license": "ISC",
   "repository": {
-    "url": "https://github.com/sladiri/hypersam-example"
+    "url": "https://github.com/sladiri/hyper-sam-example"
   },
   "engines": {
     "node": ">=10.3.0"
