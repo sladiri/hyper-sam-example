@@ -1,8 +1,9 @@
 import { countDown } from "../components/count-down";
 import { posts } from "../components/posts";
 
-export const title = "Bolt-on Prototype";
-export const description = "Bolt-on Prototype Description";
+export const title = "SAM Example";
+export const description =
+    "Example of app-state managment with the SAM pattern";
 
 export const home = props => {
     const { render, cn, state, actions } = props;
