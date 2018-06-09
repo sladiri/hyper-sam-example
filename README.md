@@ -2,6 +2,8 @@
 
 An app with state managment examples according to the [SAM Pattern](http://sam.js.org/). Rendering is done by [HyperHTML](https://viperhtml.js.org/).
 
+![Example Recording](https://raw.githubusercontent.com/sladiri/hyper-sam-example/master/sam-example.gif)
+
 ## Quick Start
 
 1.  `npm run build`
