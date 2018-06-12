@@ -31,7 +31,7 @@
     "favicons-webpack-plugin": "0.0.9",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.1.0",
-    "hypersam": "0.0.24",
+    "hypersam": "0.0.26",
     "koa": "^2.5.1",
     "koa-mount": "^3.0.0",
     "koa-route": "^3.2.0",
@@ -49,7 +49,7 @@
     "tslint": "^5.10.0",
     "typescript": "^2.9.1",
     "webpack": "^4.12.0",
-    "webpack-cli": "^3.0.3",
+    "webpack-cli": "^3.0.4",
     "webpack-visualizer-plugin": "^0.1.11"
   }
 }
