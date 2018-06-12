@@ -1,8 +1,8 @@
 import { Home } from "../pages/home";
 
 export const appShell = props => {
-    const { render } = props;
+    const { render, cn } = props;
     return render`
-        <main>${Home.page(props)}</main>
+        <main>${cn(Home.page)}</main>
         `;
 };
