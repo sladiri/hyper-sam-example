@@ -1,5 +1,15 @@
-const indexPathRegex = /^\/(app\/(.*))?$/;
-
 export const isIndexPath = ({ path }) => {
-    return !!indexPathRegex.exec(path);
+    const result =
+        path.startsWith("/") &&
+        !(
+            path.startsWith("/public") ||
+            path.startsWith("/api") ||
+            path.endsWith(".gz") ||
+            path.endsWith(".mjs") ||
+            path.endsWith(".css") ||
+            path.includes(".gz?") ||
+            path.includes(".mjs?") ||
+            path.includes(".css?")
+        );
+    return result;
 };

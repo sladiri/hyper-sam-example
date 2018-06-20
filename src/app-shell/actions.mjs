@@ -8,7 +8,7 @@ export const _Actions = ({ propose, service }) => {
             const payload = { counter: value };
             if (value === null) {
                 clearTimeout(idInProgress);
-                await propose({ proposal: payload });
+                await propose(payload);
                 service.idInProgress = null;
                 return;
             }
@@ -16,7 +16,7 @@ export const _Actions = ({ propose, service }) => {
                 return;
             }
             service.idInProgress = setTimeout(async () => {
-                await propose({ proposal: payload });
+                await propose(payload);
                 service.idInProgress = null;
             }, 1000);
         },
@@ -27,7 +27,7 @@ export const _Actions = ({ propose, service }) => {
                       .then(wait(1000))
                       .then(resp => resp.json())
                       .then(posts => ({ posts }));
-            await propose({ proposal }, "fetchPosts");
+            await propose(proposal, "fetchPosts");
         },
     });
 };
