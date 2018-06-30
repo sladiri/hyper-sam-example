@@ -1,9 +1,9 @@
 const wait = delay => value =>
     new Promise(res => setTimeout(() => res(value), delay));
 
-export const _Actions = ({ propose, service }) => {
+export const _Actions = ({ service }) => {
     return Object.assign(Object.create(null), {
-        async countDown({ value = -1 } = {}) {
+        countDown: propose => async ({ value = -1 } = {}) => {
             const { idInProgress } = service;
             const payload = { counter: value };
             if (value === null) {
@@ -20,21 +20,20 @@ export const _Actions = ({ propose, service }) => {
                 service.idInProgress = null;
             }, 1000);
         },
-        async fetchPosts({ cancel = false } = {}) {
+        fetchPosts: propose => async ({ cancel = false } = {}) => {
             const proposal = cancel
                 ? {}
                 : fetch("/posts")
                       .then(wait(1000))
                       .then(resp => resp.json())
                       .then(posts => ({ posts }));
-            await propose(proposal, "fetchPosts");
+            await propose(proposal, true);
         },
     });
 };
 
-export const Actions = ({ propose }) => {
+export const Actions = () => {
     const actions = _Actions({
-        propose,
         service: { idInProgress: null },
     });
     return actions;

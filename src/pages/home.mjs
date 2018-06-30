@@ -19,11 +19,11 @@ export const home = props => {
     const { render } = props;
     return render`
         <section>
-            <h1>CountDown Test</h1>
+            <h1>Automatic Next Action Test</h1>
             ${countDown(props)}
         </section>
         <section>
-            <h1>Cancel Test</h1>
+            <h1>Cancellable Action Test</h1>
             ${posts(props)}
         </section>
         `;

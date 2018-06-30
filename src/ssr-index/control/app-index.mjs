@@ -1,6 +1,6 @@
 import { SsrApp } from "hypersam/src/server";
 import { appShell as app, pages } from "../../app-shell/app-shell";
-import { Accept } from "../../app-shell/model";
+import { accept } from "../../app-shell/model";
 import { posts } from "../../posts-data/posts";
 
 console.assert(pages.home && pages.home.page, "Routing: Home page required");
@@ -16,7 +16,7 @@ export const state = Object.assign(Object.create(null), {
 
 export const service = () => ({ db: {} }); // TODO: connect to DB here?
 
-export const ssrOptions = { state, app, Accept, service };
+export const ssrOptions = { state, app, accept };
 
 export const routeRegex = /^\/(.+)?$/;
 
@@ -25,7 +25,8 @@ export const appIndex = async ({ ctx, body }) => {
     const query = Object.assign(Object.create(null), ctx.query);
     const { title, description } = pages[route] || pages.home;
     const { renderHTMLString, accept } = SsrApp(ssrOptions);
-    await accept({ proposal: { route, query, title, description, posts } });
+    const proposal = { route, query, title, description, posts };
+    await accept({ state, proposal });
     const appString = renderHTMLString();
     const index = body
         .toString()
